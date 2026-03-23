@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz and Assessment Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Datatype:wght@100..900&family=Doto:wght@100..900&family=Pixelify+Sans:wght@700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <div id="home" class="screen active">
+    <div class="glow-blob a"></div>
+    <div class="glow-blob b"></div>
+    <div class="home-content">
+      <div id="heading">
+        <h1>TEST YOURSELF<br><em><i>KNOWLEDGE</i></em><br>UPGRADE YOURSELF</h1>
+      </div>
+      <p class="subtitle">Choose a difficulty, beat the clock, and see where you stand.<br>Instant feedback.</p>
+
+      <div class="btn-row">
+        <div id="level">
+          <select id="difficulty-select" name="">
+            <option value="" disabled selected>Select Difficulty</option>
+            <option value="easy">EASY (45s)</option>
+            <option value="medium">MEDIUM (30s)</option>
+            <option value="hard">HARD (15s)</option>
+          </select>
+        </div>
+        <button class="btn-secondary" id="start-btn" onclick="startQuiz()" disabled>▶ Start Quiz</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="quiz" class="screen">
+    <header class="quiz-header">
+      <div class="quiz-title-badge" id="quiz-title-badge">Quiz</div>
+      <div class="q-counter" id="q-counter">1 / 10</div>
+      <div class="timer-badge" id="timer-badge">⏱ <span id="timer">30</span>s</div>
+    </header>
+    <div class="quiz-body">
+      <div class="question-number" id="q-number">QUESTION 1</div>
+      <div class="question-text" id="q-text"></div>
+      <div class="options-grid" id="options-grid"></div>
+      <div class="feedback-bar" id="feedback-bar"></div>
+      <div class="quiz-footer">
+        <button class="btn-primary" id="next-btn" onclick="nextQuestion()" style="display:none">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="results" class="screen">
+    <div class="glow-blob a"></div>
+    <div class="results-content">
+
+      <div class="score-pct-display" id="score-pct">0%</div>
+      <div class="score-label">Correct answers</div>
+
+      <div class="result-title" id="result-title">Nice Try!</div>
+      <div class="result-subtitle" id="result-subtitle"></div>
+
+      <div class="stats-row">
+        <div class="stat-card green">
+          <div class="val" id="r-correct">0</div>
+          <div class="lbl">Correct</div>
+        </div>
+        <div class="stat-card red">
+          <div class="val" id="r-wrong">0</div>
+          <div class="lbl">Wrong</div>
+        </div>
+        <div class="stat-card blue">
+          <div class="val" id="r-time">0s</div>
+          <div class="lbl">Avg Time</div>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn-primary" onclick="goHome()">← Choose Another Quiz</button>
+        <button class="btn-secondary" onclick="retryQuiz()">↻ Retry</button>
+      </div>
+
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
